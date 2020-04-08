@@ -1,6 +1,5 @@
 初始化工具类，部分工具类非原创，而是本人根据习惯进行了个性化改造，有兴趣可以到各大论坛查看原创算法（主要包括CSDN、知乎、开源中国等）
 
-* aoptools ：适用于Spring Framework AOP 操作
 * bfs ：广度优先算法
 * cache ：缓存
 * encapsulation ：数据封装 

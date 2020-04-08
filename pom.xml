@@ -19,6 +19,19 @@
     </properties>
 
     <dependencies>
+        <!-- apache poi module -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <!-- apache poi module -->
+
         <!--json 工具-->
         <dependency>
             <groupId>com.alibaba</groupId>
