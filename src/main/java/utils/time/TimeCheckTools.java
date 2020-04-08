@@ -68,12 +68,8 @@ public class TimeCheckTools {
                 return false;
             }
 
-            // 获取当前北京时间
-            Date nowTime = format.parse(
-                    DateTimeTool.getBeijingTime(
-                            format.format(new Date())
-                    )
-            );
+            // 获取当前北京时间（东八区默认参考上海时区）
+            Date nowTime = Date.from(DateTimeUtil.getDateTimeWithZone("Asian/Shanghai").toInstant(DateTimeUtil.getZoneOffsetWithZone("Asian/Shanghai")));
 
             // 获取当前凌晨时间（以北京时间为准）
             long now = nowTime.getTime();

@@ -2,8 +2,6 @@ package utils.identity;
 
 import utils.time.DateTimeUtil;
 
-import java.time.LocalDate;
-
 /**
  * @description: 身份证号校验及解析
  * @author: Fearon
@@ -68,7 +66,7 @@ public class Identification {
                 day = Integer.parseInt(idCard.substring(12, 14));
 
         // 获取当前系统年月日
-        String _current_date = DateTimeUtil.DATE_NO_LINE_FORMATTER.format(LocalDate.now());
+        String _current_date = DateTimeUtil.DATE_NO_LINE_FORMATTER.format(DateTimeUtil.getDateTimeWithZone("Asian/Shanghai"));
         int _curr_year = Integer.parseInt(_current_date.substring(0, 4)),
                 _curr_month = Integer.parseInt(_current_date.substring(4, 6)),
                 _curr_day = Integer.parseInt(_current_date.substring(6, 8));

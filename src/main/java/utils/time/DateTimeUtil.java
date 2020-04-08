@@ -27,12 +27,21 @@ public class DateTimeUtil {
     public static final DateTimeFormatter YEAR_WEEK_FORMATTER = DateTimeFormatter.ofPattern("yyyy-w");
 
     /**
-     * 获取系统默认时区所形成的偏移量
+     * 根据时区获取时区所形成的偏移量
      *
      * @return
      */
-    public static ZoneOffset getDefaultZoneOffset() {
-        return ZoneId.systemDefault().getRules().getOffset(Instant.now());
+    public static ZoneOffset getZoneOffsetWithZone(String zone) {
+        return ZoneId.of(zone).getRules().getOffset(Instant.now());
+    }
+
+    /**
+     * 根据时区获取对应时间
+     * @param zone
+     * @return
+     */
+    public static LocalDateTime getDateTimeWithZone(String zone) {
+        return LocalDateTime.now(ZoneId.of(zone));
     }
 
     /**
