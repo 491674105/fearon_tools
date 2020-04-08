@@ -1,4 +1,4 @@
-package utils.qrcode;
+package utils.qr_code;
 
 /**
  * @description: 二维码

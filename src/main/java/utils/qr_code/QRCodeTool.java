@@ -1,4 +1,4 @@
-package utils.qrcode;
+package utils.qr_code;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;

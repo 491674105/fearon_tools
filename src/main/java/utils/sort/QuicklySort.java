@@ -1,4 +1,4 @@
-package utils.sorttools;
+package utils.sort;
 
 /**
  * @description: 快速排序及优化方法
