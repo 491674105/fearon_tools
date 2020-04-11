@@ -65,8 +65,8 @@ public class Identification {
                 month = Integer.parseInt(idCard.substring(10, 12)),
                 day = Integer.parseInt(idCard.substring(12, 14));
 
-        // 获取当前系统年月日
-        String _current_date = DateTimeUtil.DATE_NO_LINE_FORMATTER.format(DateTimeUtil.getDateTimeWithZone("Asian/Shanghai"));
+        // 获取当前东八区日期（以上海时区为准）
+        String _current_date = DateTimeUtil.DATE_NO_LINE_FORMATTER.format(DateTimeUtil.getDateTimeWithZone("Asia/Shanghai"));
         int _curr_year = Integer.parseInt(_current_date.substring(0, 4)),
                 _curr_month = Integer.parseInt(_current_date.substring(4, 6)),
                 _curr_day = Integer.parseInt(_current_date.substring(6, 8));

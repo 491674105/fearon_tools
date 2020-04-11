@@ -17,8 +17,9 @@ import java.util.Set;
 public class SignatureTools {
     /**
      * MD5签名
+     *
      * @param source 明文
-     * @param key 秘钥
+     * @param key    秘钥
      */
     public static String signatureMD5(final Map<String, String> source, final String key) throws Exception {
         Set<String> keySet = source.keySet();
@@ -54,9 +55,10 @@ public class SignatureTools {
 
     /**
      * SHA签名
-     * @param source 明文
+     *
+     * @param source    明文
      * @param algorithm 签名算法（HMAC-SHA256、SHA-1、SHA-256、SHA-384、SHA-512）
-     * @param key 秘钥
+     * @param key       秘钥
      */
     public static String signatureSHA(final Map<String, String> source, final String algorithm, final String key)
             throws Exception {
@@ -130,6 +132,7 @@ public class SignatureTools {
 
     /**
      * 十六进制字符串转字节数组
+     *
      * @param _hex_string 十六进制字符串
      */
     public static byte[] byteStrToByteArray(String _hex_string) {
@@ -188,10 +191,10 @@ public class SignatureTools {
     /**
      * 校验签名是否正常
      *
-     * @param data 明文
+     * @param data      明文
      * @param algorithm 签名算法（MD5、HMAC-SHA256、SHA-1、SHA-256、SHA-384、SHA-512）
-     * @param key 秘钥
-     * @param sign 密文
+     * @param key       秘钥
+     * @param sign      密文
      * @return
      */
     public static boolean isRealSignature(final Map<String, String> data, final String algorithm, final String key,
@@ -236,6 +239,6 @@ public class SignatureTools {
         byte[] bytes = byteStrToByteArray(_hex_string);
         System.out.println(new String(bytes));
 
-        System.out.println(byteToByteStr((byte)38));
+        System.out.println(byteToByteStr((byte) 38));
     }
 }

@@ -6,9 +6,9 @@ package utils.sort;
  * @create: 2018-04-10 14:56
  **/
 public class QuicklySort {
-    public void quicklySortChoose(int [] source){
+    public void quicklySortChoose(int[] source) {
         int length = source.length;
-        if(length <= Math.pow(10.0, 6))
+        if (length <= Math.pow(10.0, 6))
             sort(source, 0, length);
         else
             sortUpgraded(source, 0, length);
@@ -16,27 +16,28 @@ public class QuicklySort {
 
     /**
      * 常规快速排序
-     * @param source
-     * @param start
-     * @param end
+     *
+     * @param source 源数据
+     * @param start  起始
+     * @param end    结束
      */
-    private void sort(int [] source, int start, int end){
-        if(start >= end)
+    private void sort(int[] source, int start, int end) {
+        if (start >= end)
             return;
 
         int copyStart = start;
         int copyEnd = end;
         int baseData = source[start];
 
-        while(copyStart < copyEnd){
-            while(copyStart < copyEnd && source[copyEnd] >= baseData)
+        while (copyStart < copyEnd) {
+            while (copyStart < copyEnd && source[copyEnd] >= baseData)
                 copyEnd--;
-            if(copyStart < copyEnd)
+            if (copyStart < copyEnd)
                 source[copyStart++] = source[copyEnd];
 
-            while(copyStart < copyEnd && source[copyStart] < baseData)
+            while (copyStart < copyEnd && source[copyStart] < baseData)
                 copyStart++;
-            if(copyStart < copyEnd)
+            if (copyStart < copyEnd)
                 source[copyEnd--] = source[copyStart];
         }
 
@@ -47,26 +48,27 @@ public class QuicklySort {
 
     /**
      * 三向切分排序
-     * @param source
-     * @param start
-     * @param end
+     *
+     * @param source 源数据
+     * @param start  起始
+     * @param end    结束
      */
-    private void sortUpgraded(int [] source, int start, int end){
-        if(start >= end)
+    private void sortUpgraded(int[] source, int start, int end) {
+        if (start >= end)
             return;
 
         int left = start,
-            mid = start + 1,
-            right = end,
-            baseData = source[start];
+                mid = start + 1,
+                right = end,
+                baseData = source[start];
 
         int compareRes;
 
-        while(mid < right){
-            compareRes = compareWithMidlle(source[mid], baseData);
-            if(compareRes > 0)
+        while (mid < right) {
+            compareRes = compareWithMiddle(source[mid], baseData);
+            if (compareRes > 0)
                 swap(source, mid, right--);
-            else if(compareRes < 0)
+            else if (compareRes < 0)
                 swap(source, left++, mid++);
             else
                 mid++;
@@ -75,16 +77,11 @@ public class QuicklySort {
         sortUpgraded(source, right + 1, end);
     }
 
-    private int compareWithMidlle(int x, int y){
-        if(x > y)
-            return 1;
-        else if(x < y)
-            return -1;
-        else
-            return 0;
+    private int compareWithMiddle(int x, int y) {
+        return Integer.compare(x, y);
     }
 
-    private void swap(int [] source, int x, int y){
+    private void swap(int[] source, int x, int y) {
         int cache = source[x];
         source[x] = source[y];
         source[y] = cache;

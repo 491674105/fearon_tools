@@ -56,6 +56,11 @@ public class FileBaseEntity {
         this.file = file;
     }
 
+    /**
+     * 校验目标文件是否存在
+     * @param path
+     * @return
+     */
     private static File createFile(String path) {
         File file = new File(path);
         File parent = file.getParentFile();

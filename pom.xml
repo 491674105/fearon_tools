@@ -32,6 +32,19 @@
         </dependency>
         <!-- apache poi module -->
 
+        <!-- easy poi module -->
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-base</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-annotation</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <!-- easy poi module -->
+
         <!--json 工具-->
         <dependency>
             <groupId>com.alibaba</groupId>
